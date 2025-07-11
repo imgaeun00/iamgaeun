@@ -5,8 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>가보자 후지락...</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body { height: 100%; font-family: sans-serif; }
+    /* 기존 스타일 참고 */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: sans-serif;
+    }
 
     .container {
       display: flex;
@@ -14,28 +19,39 @@
       width: 100%;
     }
 
+    /* 왼쪽 패널는 기존 스타일과 비슷하게 */
     .left-panel {
-      flex: 1;
+      width: 350px; /* 원래 너비 고정값 유지 */
       padding: 20px;
-      background: #111;
+      background-color: #111;
       color: white;
       overflow-y: auto;
     }
 
+    .resizer {
+      width: 5px;
+      cursor: col-resize;
+      background-color: #333;
+    }
+
+    /* 오른쪽 패널은 이미지가 자연스럽게 보이도록 조정 */
     .right-panel {
-      width: 300px; /* ✅ 이미지 크기 고정 (작게) */
+      flex-grow: 1; /* 남는 공간 다 차지 */
       background-color: black;
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 10px;
+      overflow: auto;
     }
 
     .right-panel img {
+      max-width: 400px; /* 최대 너비 작게 제한 */
       width: 100%;
       height: auto;
       border-radius: 8px;
       box-shadow: 0 0 8px rgba(0,0,0,0.5);
+      display: block;
     }
   </style>
 </head>
@@ -43,8 +59,11 @@
   <div class="container">
     <div class="left-panel">
       <h1>왼쪽 콘텐츠</h1>
-      <p>이제 이미지가 작아져서 왼쪽 영역이 넉넉해졌습니다.</p>
+      <p>원래대로 고정된 너비의 왼쪽 영역입니다.</p>
+      <p>여기에 기존 내용이 들어갑니다.</p>
     </div>
+
+    <div class="resizer"></div>
 
     <div class="right-panel">
       <img src="https://unsplash.com/photos/BM22q72Z2YU/download?force=true&w=400" alt="후지산 이미지" />

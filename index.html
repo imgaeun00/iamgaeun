@@ -5,16 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>가보자 후지락...</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
-      height: 100%;
-      font-family: sans-serif;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; font-family: sans-serif; }
 
     .container {
       display: flex;
@@ -31,7 +23,7 @@
     }
 
     .right-panel {
-      width: 400px; /* ✅ 이미지가 작게 고정됨 */
+      width: 300px; /* ✅ 이미지 크기 고정 (작게) */
       background-color: black;
       display: flex;
       justify-content: center;
@@ -42,8 +34,8 @@
     .right-panel img {
       width: 100%;
       height: auto;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.5);
     }
   </style>
 </head>
@@ -51,10 +43,11 @@
   <div class="container">
     <div class="left-panel">
       <h1>왼쪽 콘텐츠</h1>
-      <p>이곳은 왼쪽 영역입니다. 이미지가 작아져서 이쪽 공간이 더 넉넉하게 보일 거예요.</p>
+      <p>이제 이미지가 작아져서 왼쪽 영역이 넉넉해졌습니다.</p>
     </div>
+
     <div class="right-panel">
-      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" alt="산 이미지" />
+      <img src="https://unsplash.com/photos/BM22q72Z2YU/download?force=true&w=400" alt="후지산 이미지" />
     </div>
   </div>
 </body>
